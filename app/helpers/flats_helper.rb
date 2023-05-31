@@ -1,0 +1,3 @@
+module FlatsHelper
+  
+end

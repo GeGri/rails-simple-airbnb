@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+<div class = "container mt-3">
+  <h1>All our Flats</h1>
+  <p>All <%= @flats.length %> flats</p>
+  <div>
+    <% @flats.each do |flat| %>
+      <div class = "flat-card row col-md-4">
+        <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+        <div class="flat-card-content">
+          <h2><%= flat.name %></h2>
+          <p>Adress: <%= flat.address %></p>
+          <div class = "d-flex justify-content-start">
+            <p style = "margin-right: 8px">P:<%= flat.number_of_guests %></p>
+            <p>€<%= flat.price_per_night %></p>
+          </div>
+        </div>
+        <div class  = "flex-card-actions">
+          <%= link_to "More info", flat %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "New flat", new_flat_path %>
